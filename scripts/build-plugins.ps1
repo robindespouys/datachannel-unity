@@ -29,7 +29,10 @@ function Build-UnityPlugin($Platform, $SslSuffix = '', [Switch]$Editor = $false)
     $PlatformPluginsPath = "$UnityPackagePath\Runtime\Plugins\$Platform"
     $EditorPluginPath = "$UnityPackagePath\Editor\Plugins"
 
-    $PluginDestination = $Editor -eq $false ? $PlatformPluginsPath : $EditorPluginPath
+    $PluginDestination = $EditorPluginPath
+    If ($Editor -eq $false){
+        $PluginDestination = $PlatformPluginsPath
+    }
 
     Copy-Item "$PlatformBuildPath\DataChannelUnity.dll" -Destination $PluginDestination
     Copy-Item "$PlatformLibDataChannelPath\datachannel.dll" -Destination $PluginDestination
