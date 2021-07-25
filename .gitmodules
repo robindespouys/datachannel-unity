@@ -4,3 +4,6 @@
 [submodule "libdatachannel"]
 	path = libdatachannel
 	url = https://github.com/hanseuljun/libdatachannel.git
+[submodule "datachannel-wasm"]
+	path = datachannel-wasm
+	url = https://github.com/paullouisageneau/datachannel-wasm.git
